@@ -1,0 +1,23 @@
+<%= form_with url: "/search", method: :post do |form| %>
+  <%= form.label :from_currency, "Convert from:" %>
+  <%= form.select :from_currency, [["EUR", "EUR"]], selected: "EUR", disabled: true %>
+
+  <%= form.label :to_currency, "Convert to:" %>
+  <%= form.select :to_currency, [["PLN", "PLN"], ["UAH", "UAH"], ["USD", "USD"]] %>
+  
+  <%= form.label :amount %>
+  <%= form.number_field :amount, value: 100 %>
+
+  <%= form.label :date, "Date:" %>
+  <%= form.date_field :date, value: Date.today.strftime("%Y-%m-%d"), max: Date.today %>
+
+  <%= form.submit "Calculate" %>
+<% end %>
+
+<% if @result %>
+  <p>Exchange from EUR to <%= @result[:to_currency] %></p>
+  <p>The currency amount: <%= @result[:amount] %></p>
+  <p>The currency calculated amount: <%= @result[:result_amount] %></p>
+  <p>The currency exchange rate: <%= @result[:rate] %></p>
+  <p>Exchange rate on: <%= @result[:date] %></p>
+<% end %>
