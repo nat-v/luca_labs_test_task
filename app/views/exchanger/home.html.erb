@@ -3,7 +3,7 @@
   <%= form.select :from_currency, [["EUR", "EUR"]], selected: "EUR", disabled: true %>
 
   <%= form.label :to_currency, "Convert to:" %>
-  <%= form.select :to_currency, [["PLN", "PLN"], ["UAH", "UAH"], ["USD", "USD"]] %>
+  <%= form.select :to_currency, countries_for_select() %>
   
   <%= form.label :amount %>
   <%= form.number_field :amount, value: 100 %>
