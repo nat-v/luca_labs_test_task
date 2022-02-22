@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
-  root "exchanger#home"
-  post "search", to: "exchanger#search"
+  root "exchanger#index"
+  get "search", to: "exchanger#search"
+
+  namespace :api do
+    namespace :v1 do     
+      get "rate", to: "rates#rate"
+      get "show", to: "rates#show"
+    end    
+  end
 end
