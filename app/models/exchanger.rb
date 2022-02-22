@@ -22,4 +22,5 @@ class Exchanger < ApplicationRecord
         rate.save              
       end
     end
+  end
 end
