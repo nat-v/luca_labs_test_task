@@ -1,7 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# With free subscription to fixer API you can only have EUR as a base currency.
+# So I used it as a seed to the database.
+# In case if there was an opportunity to use multiple base currencies, we could create a seed for multiple entries
+# by reading the `country_code` values from a file, for example.
+
+Base.create({ country_code: 'EUR' })

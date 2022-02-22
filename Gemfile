@@ -25,6 +25,15 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Use Figaro for configuration
+gem 'figaro'
+
+# Use HTTP for making requests
+gem 'http'
+
+# Use whenever to create scheduled tasks
+gem 'whenever', require: false
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
